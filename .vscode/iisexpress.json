@@ -1,6 +1,6 @@
 {
-  "port": 2696,
-  "path": "c:\\Workspace\\ECUtbildning\\CMS\\Grupparbete2\\Soaps",
+  "port": 22747,
+  "path": "c:\\Workspace\\ECUtbildning\\Soaps",
   "clr": "v4.0",
   "protocol": "http"
 }
