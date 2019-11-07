@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "db259903c0109ee3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "5a47bbcaa3d8e63a")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -301,7 +301,7 @@ namespace Umbraco.Web.PublishedModels
 		public string SortProductsByCategory => this.Value<string>("sortProductsByCategory");
 	}
 
-	/// <summary>Products</summary>
+	/// <summary>SoapProducts</summary>
 	[PublishedModel("products")]
 	public partial class Products : Categories
 	{
@@ -429,6 +429,32 @@ namespace Umbraco.Web.PublishedModels
 
 		// ctor
 		public Home(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+	}
+
+	/// <summary>AccessoriesProducts</summary>
+	[PublishedModel("accessoriesProducts")]
+	public partial class AccessoriesProducts : Categories
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public new const string ModelTypeAlias = "accessoriesProducts";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AccessoriesProducts, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public AccessoriesProducts(IPublishedContent content)
 			: base(content)
 		{ }
 
