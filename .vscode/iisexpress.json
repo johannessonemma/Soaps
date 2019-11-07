@@ -1,6 +1,6 @@
 {
-  "port": 1991,
-  "path": "d:\\Workspace\\Umbraco\\Uppgift 3\\Soaps",
+  "port": 40632,
+  "path": "c:\\Workspace\\ECUtbildning\\CMS\\Grupparbete2\\Soaps",
   "clr": "v4.0",
   "protocol": "http"
 }
