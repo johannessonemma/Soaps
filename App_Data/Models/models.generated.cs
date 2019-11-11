@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "8332fc7909fb2efc")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a6a26df9d8cdc2d3")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -210,13 +210,6 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("aboutUsDescription")]
 		public IHtmlString AboutUsDescription => this.Value<IHtmlString>("aboutUsDescription");
-
-		///<summary>
-		/// Location Map
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("locationMap")]
-		public Our.Umbraco.GMaps.Models.GmapsModel LocationMap => this.Value<Our.Umbraco.GMaps.Models.GmapsModel>("locationMap");
 	}
 
 	/// <summary>Contact</summary>
