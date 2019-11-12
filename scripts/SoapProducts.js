@@ -24,11 +24,3 @@ function buy(e) {
 
     console.log(obj);
 }
-
-// function goToCart(){                    //ta bort??
-//     let obj = { a: arraySoaps}
-
-//     localStorage.setItem("soapnyckel", JSON.stringify(obj));
-
-//     window.location.replace("Basket.cshtml");
-// }
