@@ -1,5 +1,3 @@
-console.log("Funkar!");
-
 let arraySoaps = [];
 
 function Soap(name, quantity, price){
@@ -9,7 +7,7 @@ function Soap(name, quantity, price){
 }
 
 function buy(e) {
-    
+
     let antal = e + "Antal";
     let pris = e + "Price";
 
@@ -19,12 +17,10 @@ function buy(e) {
     let soap = new Soap(e, quantity, price);
 
     arraySoaps.push(soap);
-}
 
-function goToBasket(){
     let obj = { a: arraySoaps}
 
     localStorage.setItem("soapnyckel", JSON.stringify(obj));
 
-    window.location.replace("Basket.cshtml");
+    console.log(obj);
 }
