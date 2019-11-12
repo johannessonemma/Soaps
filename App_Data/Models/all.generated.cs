@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a6a26df9d8cdc2d3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "e74d29248f0ae8e0")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -186,13 +186,6 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("basketTaxPercentage")]
 		public int BasketTaxPercentage => this.Value<int>("basketTaxPercentage");
-
-		///<summary>
-		/// Checkout Photo
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("checkoutPhoto")]
-		public IPublishedContent CheckoutPhoto => this.Value<IPublishedContent>("checkoutPhoto");
 	}
 
 	/// <summary>About Us Page</summary>
