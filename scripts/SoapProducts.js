@@ -1,6 +1,7 @@
-let arraySoaps = [];
+store.cartContent = store.cartContent || [];
+store.save();
 
-function Soap(name, quantity, price){
+function Soap(name, quantity, price) {
     this.Name = name;
     this.Quantity = quantity;
     this.Price = price;
@@ -16,11 +17,6 @@ function buy(e) {
 
     let soap = new Soap(e, quantity, price);
 
-    arraySoaps.push(soap);
-
-    let obj = { a: arraySoaps}
-
-    localStorage.setItem("soapnyckel", JSON.stringify(obj));
-
-    console.log(obj);
+    store.cartContent.push(soap);
+    store.save();
 }
