@@ -43,8 +43,8 @@ window.onload = function () {
         console.log("q" + c[x].Quantity);
         console.log("p" + c[x].Price);
 
-        quantity = nyArray[x].Quantity;
-        price = nyArray[x].Price;
+        quantity = c[x].Quantity;
+        price = c[x].Price;
 
     }
 
