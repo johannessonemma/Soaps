@@ -1,0 +1,32 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Basket>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+	Layout = "master.cshtml";
+}
+
+<div class="main">
+	<div class="shop_top">
+		<div class="container">
+			<div class="row shop_box-top">
+				<div class="col-md-8 shop_box">
+					<div class="shop_desc">
+
+					<p id="OrderList"> </p>
+					<p> Nettopris: <label id="nettoPris"> </label> kr </p>
+					<p> Moms: <label id="moms"> </label> kr </p>
+					<p> Frakt: <label id="frakt"> </label> kr </p>
+					<p> Bruttopris(inkl avg och moms): <label id="bruttoPris"> </label> kr </p>
+
+						<ul class="buttons">
+							<li class="cart"><a href="/categories">Back to Products</a></li>
+							<li class="shop_btn"><a href="#">Confirm Order</a></li>
+							<div class="clear"> </div>
+						</ul>
+					</div>
+				</a></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="scripts/Basket.js"></script>

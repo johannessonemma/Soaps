@@ -1,0 +1,39 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Products>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+	var co = 1;
+}
+
+
+	
+<div class="main">
+	<div class="shop_top">
+		<div class="container">
+			<div class="row shop_box-top">
+				@foreach (Product product in Model.FeaturedProducts)
+                {
+					<div class="col-md-3 shop_box">
+						<image src="@product.Photos.Url" class="img-responsive")></image>
+						<div class="shop_desc">
+                        	<div class="product-grid__item__overlay">
+                            	<h4 class="product-grid__item__name">@product.ProductName</h4><br>
+								<div>@product.Description</div><br>
+                            	<div id="Soapnr.@(co)Price" class="actual">@product.Price.ToString("F")</div><span> kr</span> <br>
+								<input id="Soapnr.@(co)Antal" type="text" >
+								<input id="Soapnr.@(co)Kampanj" type="hidden" value="@(product.CampaignItem == "True" ? 1 : 0)">
+								<ul class="buttons">
+									<li class="cart"><button id="buy" type="button" onclick="buy('Soapnr.@co')">Add To Cart</button></li>
+									<div class="clear"> </div>
+								</ul>
+                        	</div>
+						</div>
+                	</div>
+
+                  co++;
+                }
+			
+			</div>
+		</div>
+	</div>
+</div>
