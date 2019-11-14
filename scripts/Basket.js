@@ -12,6 +12,7 @@ var kampanj;
 var soap;
 
 window.onload = function () {
+    var quantity2;
     var c = store.cartContent;
     var ul = document.getElementById("OrderList");
     for (var x = 0; x < c.length; x++) {
@@ -23,8 +24,17 @@ window.onload = function () {
         var t = document.createTextNode("Ta bort");
         button.appendChild(t);
 
+        quantity2 = c[x].Quantity;
 
-        li.innerHTML = li.innerHTML + c[x].Name + ",\t" + c[x].Quantity + ",\r" + c[x].Price + ",\r" + "Totalt: " + (c[x].Quantity * c[x].Price) + "kr";
+        if (c[x].Quantity >= 3) {
+            c[x].Quantity = c[x].Quantity - c[x].Campaign;
+
+            console.log("working?");
+
+        }
+
+
+        li.innerHTML = li.innerHTML + c[x].Name + ",\t" + quantity2 + ",\r" + c[x].Price + ",\r" + "Totalt: " + (c[x].Quantity * c[x].Price) + "kr";
         li.appendChild(button);
 
         var y = "li" + x;
@@ -128,12 +138,3 @@ function beraknaNetto() {
         netto = 0;
     }
 }
-
-// function payOrder() {               //ta bort??
-
-//     var obj = { a: c}						                //spara i localstorage igen.   a= property och värdet är arrayen. skapar först en variabel/objekt som har värde enligt arrayen
-// 	localStorage.setItem("kaknyckel", JSON.stringify(obj));     // Omvandlar objektet ovan till en sträng, som jag sen stoppar in i localstorage.
-
-// 	window.location.replace("Confirm.html");                    //skickas till Confirm-sidan 
-
-// }
