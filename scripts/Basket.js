@@ -1,15 +1,21 @@
 var netto = 0;
 var moms;
 var frakt;
-var brutto;
+var rabatt;
+var brutto;  
+
+var quantity;
+var price;
+
+var kampanj;
 
 var soap;
 
 window.onload = function () {
+    var quantity2;
     var c = store.cartContent;
     var ul = document.getElementById("OrderList");
     for (var x = 0; x < c.length; x++) {
-        console.log("i for-loopen");
 
         var li = document.createElement('li');
         ul.appendChild(li);
@@ -17,8 +23,15 @@ window.onload = function () {
         var t = document.createTextNode("Ta bort");
         button.appendChild(t);
 
+        quantity2 = c[x].Quantity;
 
-        li.innerHTML = li.innerHTML + c[x].Name + ",\t" + c[x].Quantity + ",\r" + c[x].Price + ",\r" + "Totalt: " + (c[x].Quantity * c[x].Price) + "kr";
+        if (c[x].Quantity >= 3) {
+            c[x].Quantity = c[x].Quantity - c[x].Campaign;
+
+            console.log("working?");
+        }
+
+        li.innerHTML = li.innerHTML + c[x].Name + ",\t" + quantity2 + ",\r" + c[x].Price + ",\r" + "Totalt: " + (c[x].Quantity * c[x].Price) + "kr";
         li.appendChild(button);
 
         var y = "li" + x;
@@ -26,28 +39,21 @@ window.onload = function () {
 
         button.setAttribute("id", x);
 
-        console.log("setter" + x);
         document.getElementById(x).addEventListener("click", function () {
             removeItem(this);
         });
-        console.log("efter" + x);
 
         netto += (c[x].Quantity * c[x].Price);
 
-        console.log("q" + c[x].Quantity);
-        console.log("p" + c[x].Price);
-
+        quantity = c[x].Quantity;
+        price = c[x].Price;
     }
 
     prisvisning();
-
-    console.log(netto);
-    console.log(c);
-
 }
 
 function prisvisning() {
-
+    
     document.getElementById("nettoPris").innerText = netto;
 
     moms = 0.25 * netto;
@@ -60,9 +66,7 @@ function prisvisning() {
     }
 
     document.getElementById("frakt").innerText = frakt;
-
-    console.log("frakt" + frakt);
-
+    
     brutto = (netto + moms + frakt);
     document.getElementById("bruttoPris").innerText = brutto;
 }
@@ -71,26 +75,18 @@ function removeItem(x) {
     var c = store.cartContent;
 
     var nyttId = x.id;
-    //x = (x-1);
-    console.log(nyttId + "hämtar");
     store.cartContent.splice(nyttId, 1);
     store.save();
 
-
     var id = "li" + nyttId;
     var li = document.getElementById(id);
-    console.log(li);
     li.setAttribute("style", "display:none;");
-
-    console.log("gammalt netto" + netto);
 
     netto = 0;
 
     beraknaNetto();
-    console.log("nytt netto" + netto);
 
     prisvisning();
-
 }
 
 function beraknaNetto() {
@@ -105,12 +101,3 @@ function beraknaNetto() {
         netto = 0;
     }
 }
-
-// function payOrder() {               //ta bort??
-
-//     var obj = { a: c}						                //spara i localstorage igen.   a= property och värdet är arrayen. skapar först en variabel/objekt som har värde enligt arrayen
-// 	localStorage.setItem("kaknyckel", JSON.stringify(obj));     // Omvandlar objektet ovan till en sträng, som jag sen stoppar in i localstorage.
-
-// 	window.location.replace("Confirm.html");                    //skickas till Confirm-sidan 
-
-// }
