@@ -1,7 +1,13 @@
 var netto = 0;
 var moms;
 var frakt;
-var brutto;
+var rabatt;
+var brutto;  
+
+var quantity;
+var price;
+
+var kampanj;
 
 var soap;
 
@@ -47,6 +53,9 @@ window.onload = function () {
         console.log("q" + c[x].Quantity);
         console.log("p" + c[x].Price);
 
+        quantity = c[x].Quantity;
+        price = c[x].Price;
+
     }
 
     prisvisning();
@@ -58,6 +67,19 @@ window.onload = function () {
 
 function prisvisning() {
 
+    console.log("antal:" + quantity);
+    console.log("netto före:" + netto);
+    console.log("price före:" + price);
+
+    // document.getElementById("kampanj").value = kampanj;
+
+    // if(quantity >=  3 && id "kampanj" == 3){
+    //     netto = (netto - price);
+    // }
+    console.log("netto efter:" + netto);
+
+    
+    
     document.getElementById("nettoPris").innerText = netto;
 
     moms = 0.25 * netto;
@@ -72,7 +94,8 @@ function prisvisning() {
     document.getElementById("frakt").innerText = frakt;
 
     console.log("frakt" + frakt);
-
+    
+    
     brutto = (netto + moms + frakt);
     document.getElementById("bruttoPris").innerText = brutto;
 }
