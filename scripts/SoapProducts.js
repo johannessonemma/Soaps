@@ -12,6 +12,8 @@ function buy(e) {
 
     let antal = e + "Antal";
     let pris = e + "Price";
+
+   // let Soapnr.@(co)Price
     let kampanj = e + "Kampanj";
 
     let quantity = document.getElementById(antal).value;
