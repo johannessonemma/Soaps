@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1688e107941b16ee")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9678ed137f40b9cc")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 namespace Umbraco.Web.PublishedModels
@@ -530,6 +530,13 @@ namespace Umbraco.Web.PublishedModels
 		{ }
 
 		// properties
+
+		///<summary>
+		/// CampaignItem: Is this product on campaign
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("campaignItem")]
+		public string CampaignItem => this.Value<string>("campaignItem");
 
 		///<summary>
 		/// Content
