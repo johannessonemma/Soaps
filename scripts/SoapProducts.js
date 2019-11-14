@@ -12,15 +12,11 @@ function buy(e) {
 
     let antal = e + "Antal";
     let pris = e + "Price";
-
-   // let Soapnr.@(co)Price
     let kampanj = e + "Kampanj";
 
     let quantity = document.getElementById(antal).value;
     let price = document.getElementById(pris).innerHTML;
     let campaign = document.getElementById(kampanj).value;
-
-
 
     let soap = new Soap(e, quantity, price, campaign);
 
