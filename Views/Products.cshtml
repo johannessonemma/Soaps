@@ -6,11 +6,19 @@
 }
 
 
+
 	
 <div class="main">
 	<div class="shop_top">
 		<div class="container">
 			<div class="row shop_box-top">
+				
+				<div>
+					<form>
+						<input type="text" placeholder="Enter your search term..." id="">
+					</form>
+				</div>
+				
 				@foreach (Product product in Model.FeaturedProducts)
                 {
 					<div class="col-md-3 shop_box">
