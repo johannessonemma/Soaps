@@ -15,18 +15,20 @@
 				
 				<div>
 					<form>
-						<input type="text" placeholder="Enter your search term..." id="">
+						<p> Skriv in ditt sökord här:</p>
+						<input type="text" id="searchWord" onkeyup="searchFor()">
+						<!-- <button id="search" type="button" onclick="searchFor()">Sök</button> -->
 					</form>
 				</div>
 				
 				@foreach (Product product in Model.FeaturedProducts)
                 {
-					<div class="col-md-3 shop_box">
+					<div class="col-md-3 shop_box" id="Soapnr.@(co)Product">
 						<image src="@product.Photos.Url" class="img-responsive")></image>
 						<div class="shop_desc">
                         	<div class="product-grid__item__overlay">
                             	<h4 class="product-grid__item__name">@product.ProductName</h4><br>
-								<div>@product.Description</div><br>
+								<div class="description" id="Soapnr.@(co)Description">@product.Description</div><br>
                             	<div id="Soapnr.@(co)Price" class="actual">@product.Price.ToString("F")</div><span> kr</span> <br>
 								<input id="Soapnr.@(co)Antal" type="text" >
 								<input id="Soapnr.@(co)Kampanj" type="hidden" value="@(product.CampaignItem == "True" ? 1 : 0)">
