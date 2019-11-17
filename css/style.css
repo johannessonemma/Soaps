@@ -2518,3 +2518,12 @@ fieldset.input input[type="submit"]:hover {
 		margin: 10px 0;
 	}
 }
+
+#searchArea {
+	color: grey;
+}
+
+.highlight {
+	color: yellow;
+	text-decoration: underline;
+}

@@ -2,7 +2,7 @@ var netto = 0;
 var moms;
 var frakt;
 var rabatt;
-var brutto;  
+var brutto;
 
 var quantity;
 var price;
@@ -50,10 +50,12 @@ window.onload = function () {
     }
 
     prisvisning();
+
+
 }
 
 function prisvisning() {
-    
+
     document.getElementById("nettoPris").innerText = netto;
 
     moms = 0.25 * netto;
@@ -66,7 +68,7 @@ function prisvisning() {
     }
 
     document.getElementById("frakt").innerText = frakt;
-    
+
     brutto = (netto + moms + frakt);
     document.getElementById("bruttoPris").innerText = brutto;
 }

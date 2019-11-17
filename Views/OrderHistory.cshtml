@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.OrderHistory>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+	Layout = "master.cshtml";
+}
+
+<div class="main">
+	<div class="shop_top">
+		<div class="container">
+			<div class="row shop_box-top">
+				<div class="col-md-8 shop_box">
+					<div class="shop_desc">
+
+					<ul class="buttons">
+						<li class="cart"><a href="#" onclick="fixOrderHistory()">Show Order History</a></li>
+						<div class="clear"> </div>
+					</ul>
+					<div id="OrderHistoryList"> </div>
+					</div>
+				</a></div>
+			</div>
+		</div>
+	</div>
+</div>

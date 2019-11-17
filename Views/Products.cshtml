@@ -5,11 +5,16 @@
 	var co = 1;
 }
 
-
 	
 <div class="main">
-	<div class="shop_top">
+	<div class="col-md-3 mt-n6">
+	
+	</div>
+	<div id="searchArea" class="shop_top">
 		<div class="container">
+			<input type="text" id="search_products">
+			<input type="button" value="search" id="search">
+			<p><br></p>
 			<div class="row shop_box-top">
 				@foreach (Product product in Model.FeaturedProducts)
                 {
@@ -18,7 +23,7 @@
 						<div class="shop_desc">
                         	<div class="product-grid__item__overlay">
                             	<h4 class="product-grid__item__name">@product.ProductName</h4><br>
-								<div>@product.Description</div><br>
+								<p>@product.Description</p><br>
                             	<div id="Soapnr.@(co)Price" class="actual">@product.Price.ToString("F")</div><span> kr</span> <br>
 								<input id="Soapnr.@(co)Antal" type="text" >
 								<input id="Soapnr.@(co)Kampanj" type="hidden" value="@(product.CampaignItem == "True" ? 1 : 0)">
@@ -37,3 +42,5 @@
 		</div>
 	</div>
 </div>
+
+<script src="scripts/search2.js"></script>
